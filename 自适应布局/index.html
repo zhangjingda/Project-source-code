@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+  <meta charset="utf-8">
+  <title>响应式布局页面</title>
+  <meta name="viewport" content="width=device-width,  initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css">
+  <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="./js/jquery-2.1.1.min.js" ></script>
+  <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+  <style type="text/css">
+  *{
+  	margin:0;
+  	padding:0;
+  }
+
+  body{
+  	font-size: 14px;
+  	font-family: "Microsoft YaHei",arial,serif;
+  }
+  a{
+    color:#000;
+    text-decoration: none;
+  }
+  a:hover{
+    color:#00f;
+    text-decoration: none;
+  }
+
+  #search{
+
+     width: 120px;
+  }
+  
+  .myNav{
+      margin-top: 20px;
+  }
+  .myNav ul{
+    list-style: none;
+    border-bottom: 5px solid #000;
+    height: 34px;
+  }
+  .myNav  ul li{
+     float: left;
+  }
+  .myNav a{
+     padding: 10px 25px;
+     font-size: 16px;
+     font-weight: bold;
+  }
+   .myNav a:hover{
+     color:#fff;
+     background-color: #000;
+  
+  }
+  .setSelect{
+    display: none;
+  }
+  .user{
+     list-style: none;
+     float: right;
+     margin-top: -35px;
+     margin-right: 80px;
+  }
+  .user li{
+     margin: 0 10px;
+  }
+
+  .leftSide img{
+     padding-right: 20px;
+     float:left;
+     width:160px;
+     height: 150px;
+  }
+  .leftSide h3{
+    margin-top:0;
+  }
+  .leftSide p{
+    margin-top:10px;
+    font-size: 1.7rem
+  }
+
+  .l-box{
+    margin-bottom: 50px;
+  }
+  .r-list{
+     margin-top:20px;
+  }
+  
+  .f{
+    color: #00f;
+  }
+  .panel-body img{
+     margin-right:10px;
+     margin-bottom: 30px;
+     float: left;
+     height: 60px;
+  }
+  .panel-body h5{
+    margin-top: 0;
+    /*margin-bottom: 0;*/
+  }
+  .f-l{
+    margin-top:30px;
+  }
+  .f-l p{
+     line-height: 1.5em;
+     font-size: 16px;
+  }
+  .f-l li{
+    line-height: 1.5em;
+    font-size: 16px;
+   
+  }
+  .f-l li a{
+     color:#00f;
+  }
+  .f-l img{
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+  .f-l h4{
+    color:#00f;
+  }
+  .f-l ul{
+    list-style: none;
+  }
+  .f-l ul li{
+     font-size: 16px;
+     line-height: 1.9em;
+  }
+  .f-c{
+    line-height: 1.5em;
+    font-size: 16px;
+  }
+
+
+  @media only screen  and (max-width: 760px){
+    .setLogin{
+       float: left !important;
+    }
+    .setImg{
+       text-align: center;
+    }
+    .setImg{
+      margin-left: 35%;
+
+    }
+    .setUL{
+      display: none;
+    }
+    .setSelect{
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    
+
+
+  }
+
+  @media only screen  and (max-width: 992px){
+     .ADBanner{
+       display: none;
+    }
+    .setImg{
+      margin-left: 35%;
+
+    }
+  }
+
+
+
+
+
+  </style>
+
+</head>
+<body>
+
+
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+    <div class="navbar-header">
+       <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target="#example-navbar-collapse">
+            <span class="sr-only">切换导航</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">首页</a>
+    </div>
+    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+        <ul class="nav navbar-nav" style="width:94%">
+            <li><a href="#">资讯</a></li>
+            
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    资源 <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">全部文章</a></li>
+                    <li><a href="#">web前端</a></li>
+                    <li><a href="#">Python 开发</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">java技术</a></li>
+                    <li><a href="#">IOS应用</a></li>
+                    <li><a href="#">Android应用</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#">文章</a></li>
+            <li><a href="#">小组</a></li>
+        
+
+             
+            <form class="navbar-form navbar-left" role="search" method="get" action="">
+                 <div class="input-group">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">提交</button>
+                 </div>
+            </form>
+
+          
+             
+        </ul>
+       
+    </div>
+    </div>
+     <ul class="user">
+      <li class="pull-right setLogin"><a href="#"><span class="glyphicon glyphicon-user"></span>注册</a></li>
+      <li class="pull-right setLogin"><a href="#"><span class="glyphicon glyphicon-user"></span>登录</a></li>
+     </ul>
+</nav>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+       <img src="./img/1_1.jpg" class="setImg" width="130px"/>
+    </div>
+    <div class="col-md-10 ADBanner" style="background-color: #ccc;">广告横条</div>
+  </div>
+
+  <div class="row myNav">
+  <div class="col-md-12">
+     <ul class="setUL">
+       <li><a href="">首页</a></li>
+       <li><a href="">最新文章</a></li>
+       <li><a href="">IT职场</a></li>
+       <li><a href="">前端</a></li>
+       <li><a href="">后端</a></li>
+       <li><a href="">移动端</a></li>
+       <li><a href="">数据库</a></li>
+     </ul>
+     <select class="setSelect">
+       <option><a href="">--请选择--</a></option>
+       <option><a href="">首页</a></option>
+       <option><a href="">最新文章</a></option>
+       <option><a href="">IT职场</a></option>
+       <option><a href="">前端</a></option>
+       <option><a href="">后端</a></option>
+       <option><a href="">移动端</a></option>
+       <option><a href="">数据库</a></option>
+     </select>
+     </div>
+  </div>
+
+  <div class="row">
+     <div class="col-md-12">
+       <ul class="list-group">
+         <li class="list-group-item">伯乐在线 > 首页 > 所有文章 > java</li>
+        </ul>
+     </div>
+  </div>
+
+  <div class="row">
+  
+
+     <div class="leftSide col-md-9 col-sm-12 col-xs-12">
+          <div class="clearfix l-box">
+             <img src="./img/1_1.jpg">
+             <h3>使用 Go 语言来理解 Tensorflow</h3>
+             <div>2017/06/17 · 开发</div>
+             <p>本文通过一个简单的Go绑定实例，让读者一步一步地学习到Tensorflow有关ID、作用域、类型等方面的知识。
+             </p>
+             <div class="btn btn-primary pull-right">阅读更多内容&gt;&gt;</div>
+          </div>
+
+           <div class="clearfix l-box">
+             <img src="./img/1_2.jpg">
+             <h3>九年游戏开发经验谈</h3>
+             <div>2017/06/16 · 职场</div>
+             <p>程序员是一个充满了躁动与焦虑的职业，新人的不断涌入和频繁的跳槽正在不断消磨人们对这个行业的安全感。而我有幸认识了这样一位工程师，他从 08 年就加入育碧上海工作室从事他所热爱的游戏开发。这九年的时间里，他见证了游戏行业的蓬勃发展，开发技术的日新月异，而育碧也见证了他由青涩到成熟，在游戏开发行业中渐渐闯出自己的一番天地。
+             <div class="btn btn-primary pull-right">阅读更多内容&gt;&gt;</div>
+             </p>
+          </div>
+
+            <div class="clearfix l-box">
+             <img src="./img/1_1.jpg">
+             <h3>使用 Go 语言来理解 Tensorflow</h3>
+             <div>2017/06/17 · 开发</div>
+             <p>本文通过一个简单的Go绑定实例，让读者一步一步地学习到Tensorflow有关ID、作用域、类型等方面的知识。
+             </p>
+             <div class="btn btn-primary pull-right">阅读更多内容&gt;&gt;</div>
+
+          </div>
+
+
+            <div class="clearfix l-box">
+             <img src="./img/1_2.jpg">
+             <h3>使用 Go 语言来理解 Tensorflow</h3>
+             <div>2017/06/17 · 开发</div>
+             <p>本文通过一个简单的Go绑定实例，让读者一步一步地学习到Tensorflow有关ID、作用域、类型等方面的知识。
+             </p>
+             <div class="btn btn-primary pull-right">阅读更多内容&gt;&gt;</div>
+
+          </div>
+           <div class="clearfix l-box">
+             <img src="./img/1_3.jpg">
+             <h3>使用 Go 语言来理解 Tensorflow</h3>
+             <div>2017/06/17 · 开发</div>
+             <p>本文通过一个简单的Go绑定实例，让读者一步一步地学习到Tensorflow有关ID、作用域、类型等方面的知识。
+             </p>
+             <div class="btn btn-primary pull-right">阅读更多内容&gt;&gt;</div>
+
+          </div>
+           <div class="clearfix l-box">
+             <img src="./img/1_4.jpg">
+             <h3>使用 Go 语言来理解 Tensorflow</h3>
+             <div>2017/06/17 · 开发</div>
+             <p>本文通过一个简单的Go绑定实例，让读者一步一步地学习到Tensorflow有关ID、作用域、类型等方面的知识。
+             </p>
+             <div class="btn btn-primary pull-right">阅读更多内容&gt;&gt;</div>
+
+          </div>
+           <div class="clearfix l-box">
+             <img src="./img/1_5.jpg">
+             <h3>使用 Go 语言来理解 Tensorflow</h3>
+             <div>2017/06/17 · 开发</div>
+             <p>本文通过一个简单的Go绑定实例，让读者一步一步地学习到Tensorflow有关ID、作用域、类型等方面的知识。
+             </p>
+             <div class="btn btn-primary pull-right">阅读更多内容&gt;&gt;</div>
+
+          </div>
+           <div class="clearfix l-box">
+             <img src="./img/1_1.jpg">
+             <h3>使用 Go 语言来理解 Tensorflow</h3>
+             <div>2017/06/17 · 开发</div>
+             <p>本文通过一个简单的Go绑定实例，让读者一步一步地学习到Tensorflow有关ID、作用域、类型等方面的知识。
+             </p>
+             <div class="btn btn-primary pull-right">阅读更多内容&gt;&gt;</div>
+
+          </div>
+           <div class="clearfix l-box">
+             <img src="./img/1_3.jpg">
+             <h3>使用 Go 语言来理解 Tensorflow</h3>
+             <div>2017/06/17 · 开发</div>
+             <p>本文通过一个简单的Go绑定实例，让读者一步一步地学习到Tensorflow有关ID、作用域、类型等方面的知识。
+             </p>
+             <div class="btn btn-primary pull-right">阅读更多内容&gt;&gt;</div>
+
+          </div>
+           <div class="clearfix l-box">
+             <img src="./img/1_2.jpg">
+             <h3>使用 Go 语言来理解 Tensorflow</h3>
+             <div>2017/06/17 · 开发</div>
+             <p>本文通过一个简单的Go绑定实例，让读者一步一步地学习到Tensorflow有关ID、作用域、类型等方面的知识。
+             </p>
+             <div class="btn btn-primary pull-right">阅读更多内容&gt;&gt;</div>
+
+          </div>
+           <div class="clearfix l-box" style="background-color: #ccc">
+             <div class="btn btn-block">加载更多</div>
+          </div>
+
+
+
+     </div>
+     <div class="rightSIde col-md-3 col-sm-12 col-xs-12">
+         <img src="./img/1_4.jpg" class="img-responsive"/>
+          <ul class="list-group r-list">
+            <li class="list-group-item"><span class="f">0</span><a href=""> Kotlin 喧嚣过后，谈谈 Java 程...
+            </a></li>
+            <li class="list-group-item"><span class="f">1</span><a href=""> 我给你钱，你帮我改好不好？
+            </a></li>
+            <li class="list-group-item"><span class="f">2</span><a href=""> PHP 框架 Laravel 作者的工作...
+            </a></li>
+            <li class="list-group-item"><span class="f">3</span><a href=""> 2017 年最佳开源网络监控工具
+            </a></li>
+            <li class="list-group-item"><span class="f">4</span><a href=""> 当程序员写不出代码了，该怎么办？
+            </a></li>
+              <li class="list-group-item"><span class="f">5</span><a href=""> 做 Web 开发必备的安全核对清单
+            </a></li>
+            <li class="list-group-item"><span class="f">6</span><a href=""> Kotlin 喧嚣过后，谈谈 Java 程...
+            </a></li>
+            <li class="list-group-item"><span class="f">7</span><a href=""> 我给你钱，你帮我改好不好？
+            </a></li>
+            <li class="list-group-item"><span class="f">8</span><a href=""> PHP 框架 Laravel 作者的工作...
+            </a></li>
+            <li class="list-group-item"><span class="f">9</span><a href=""> 2017 年最佳开源网络监控工具
+            </a></li>
+            <li class="list-group-item"><span class="f">10</span><a href=""> 当程序员写不出代码了，该怎么办？
+            </a></li>
+              <li class="list-group-item"><span class="f">11</span><a href=""> 做 Web 开发必备的安全核对清单
+            </a></li>
+          </ul>
+          <img src="./img/1_2.jpg" class="img-responsive"/>
+
+           
+          <div class="panel panel-default r-list">
+              <div class="panel-heading">
+                  <h3 class="panel-title">
+                      业界热点资讯<span class="pull-right"><a href="">更多>></a></span>
+                  </h3>
+              </div>
+              <div class="panel-body">
+                
+                <div class="clearfix">
+                   <a href=""><img src="./img/1_1.jpg" width="50"></a>
+                   <h5><a href="">美国国家安全局：朝鲜是 WannaCry 勒索病毒幕后黑手</a></h5>
+                   <small>2 天前 · <a href=""><span class="glyphicon glyphicon-thumbs-up"></span>  7</a></small>
+                </div>
+
+                <div class="clearfix">
+                   <a href=""><img src="./img/1_2.jpg" width="50"></a>
+                   <h5><a href="">美国国家安全局：朝鲜是 WannaCry 勒索病毒幕后黑手</a></h5>
+                   <small>2 天前 · <a href=""><span class="glyphicon glyphicon-thumbs-up"></span>  7</a></small>
+                </div>
+
+                <div class="clearfix">
+                   <a href=""><img src="./img/1_3.jpg" width="50"></a>
+                   <h5><a href="">美国国家安全局：朝鲜是 WannaCry 勒索病毒幕后黑手</a></h5>
+                   <small>2 天前 · <a href=""><span class="glyphicon glyphicon-thumbs-up"></span>  7</a></small>
+                </div>
+
+                <div class="clearfix">
+                   <a href=""><img src="./img/1_4.jpg" width="50"></a>
+                   <h5><a href="">美国国家安全局：朝鲜是 WannaCry 勒索病毒幕后黑手</a></h5>
+                   <small>2 天前 · <a href=""><span class="glyphicon glyphicon-thumbs-up"></span>  7</a></small>
+                </div>
+
+                <div class="clearfix">
+                   <a href=""><img src="./img/1_5.jpg" width="50"></a>
+                   <h5><a href="">美国国家安全局：朝鲜是 WannaCry 勒索病毒幕后黑手</a></h5>
+                   <small>2 天前 · <a href=""><span class="glyphicon glyphicon-thumbs-up"></span>  7</a></small>
+                </div>
+                  
+              </div>
+          </div>
+
+
+
+     </div>
+  </div>
+
+  <div class="row" style="background-color: #eee">
+
+    <div class="col-md-4 col-sm-4 col-xs-12 col-lg-4">
+
+       <div class="f-l">
+         <h4>关于伯乐在线博客</h4>
+         <hr>
+         <p>在这个信息爆炸的时代，人们已然被大量、快速并且简短的信息所包围。然而，我们相信：过多“快餐”式的阅读只会令人“虚胖”，缺乏实质的内涵。伯乐在线内容团队正试图以我们微薄的力量，把优秀的原创文章和译文分享给读者，为“快餐”添加一些“营养”元素。</p>
+
+         <ul style="list-style: none">
+            <li>快速链接</li>
+            <li><a href="">网站使用指南 »</a> </li>
+            <li><a href="">问题反馈与求助 »</a> </li>
+            <li><a href="">加入我们 » </a></li>
+            <li><a href="">网站积分规则 »</a> </li>
+            <li><a href="">网站声望规则 »</a></li>
+
+         </ul>
+
+       </div>
+
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12 col-lg-4" >
+
+        <div class="f-l">
+         <h4>关注我们</h4>
+         <hr>
+         <div class="f-c">新浪微博：@伯乐在线官方微博</div>
+         <div class="f-c">RSS：订阅地址</div>
+         <div class="f-c">推荐微信号 </div>
+
+         <img src="./img/1_1.jpg" width="115">
+         <img src="./img/1_2.jpg" width="115">
+         <img src="./img/1_3.jpg" width="115">
+
+         <div class="f-c">合作联系</div>
+         <div class="f-c">Email：bd@Jobbole.com</div>
+         <div class="f-c">QQ： 2302462408 （加好友请注明来意)</div>
+
+       </div>
+
+
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12 col-lg-4">
+     <div class="f-l">
+         <h4>更多频道</h4>
+         <hr>
+         <ul>
+
+         <li>小组 – 好的话题、有启发的回复、值得信赖的圈子</li>
+         <li>头条 – 分享和发现有价值的内容与观点</li>
+         <li>相亲 – 为IT单身男女服务的征婚传播平台</li>
+         <li>资源 – 优秀的工具资源导航</li>
+         <li>翻译 – 翻译传播优秀的外文文章</li>
+         <li>文章 – 国内外的精选文章</li>
+         <li>设计 – UI,网页，交互和用户体验</li>
+         <li>iOS – 专注iOS技术分享</li>
+
+         </ul>
+
+       </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+@charset "UTF-8";
+html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img {
+    margin: 0;
+    padding: 0;
+}
+body{
+	font-size: 14px;
+	font-family: Arial,"宋体";
+	color: #000;
+}
+.font-red{
+	color:#F00;
+}
+.font-green{
+	color:#0F0;
+}
+.floatl{
+	float: left;
+}
+.floatr{
+	float: right;
+}
+.clearall{
+	clear: both;
+}
+.padding-left10{
+	padding-left: 10px;
+}
+
+.padding-right10{
+	padding-right: 10px;
+}
+
+.padding-top20{
+	padding-top: 20px;
+}
+
+.padding-bottom10{
+	padding-bottom: 10px;
+}
+
+
+.margin-left10{
+	margin-left: 10px;
+}
+.margin-right10{
+	margin-right: 10px;
+}
+.margin-bottom10{
+	margin-bottom: 10px;
+}
+.margin-top10{
+	margin-top: 10px;
+}
+.margin-top20{
+	margin-top: 20px;
+}
+.margin-top30{
+	margin-top: 30px;
+}
+fieldset,img {
+    border: 0;
+}
+img {
+    display: block;
+
+}
+a{
+	text-decoration: none;
+	color:#000;
+}
+a:hover{
+	color:#F00;
+}
+ul{
+	padding-left: 18px;
+}
+ul li{
+	padding:2px 0 4px 0;
+}
+.menu{
+	margin-top:10px;
+}
+.nav li a{
+	margin-top:24px;
+	padding:3px 10px 3px 10px;
+}
+.rigfont{
+	font-size: 10px;
+	opacity:0.6;
+}
+
+.panel-title{
+	font-size: 10px;
+	opacity: 0.7;
+	/*padding: 3px 0;*/
+}
+.panel-heading{
+	padding: 3px 0;
+	border: none;
+}
+.mainfont{
+	font-size: 12px;
+}

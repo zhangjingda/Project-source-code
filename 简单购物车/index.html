@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content" content="text/html;charset:utf-8">
+<title>实现瀑布流效果</title>
+<style type="text/css">
+*{
+	padding:0;
+	margin:0;
+}
+a{
+  color: #000;
+  text-decoration: none;
+}
+a:hover{
+	color:#F00;
+	text-decoration: underline;
+
+}
+img:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+#box{
+	margin:10px auto;
+	width: 1200px;
+	border:1px solid #ccc;
+}
+#checkall{
+	float: left;
+	padding-left: 20px;
+	padding-right: 10px;
+	margin-top:10px;
+}
+#checkrev{
+   float: left;
+   margin-top:10px;
+}
+
+.container{
+	position: relative;
+	height: 150px;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	
+}
+.store{
+	padding:5px 0 5px 20px;
+}
+.store input[type=checkbox]{
+	width:15px;
+	height:15px;
+}
+.content{
+	padding:5px 0 5px 20px;
+	width:1180px;
+	height: 110px;
+	position: relative;
+}
+.choice{
+	float: left;
+	width:100px;
+	height:100px;
+	text-align: center;
+	line-height: 100px;
+}
+.choice input[type=checkbox]{
+	width:20px;
+	height:20px;
+
+}
+
+.shop_thing{
+	float: left;
+	width:300px;
+	height:100px;
+
+}
+.shop_thing img{
+	border: none;
+	float: left;
+	padding-right: 10px;
+	padding-top:7px;
+	padding-left: 5px;
+	width:120px;
+	height:80px;
+	
+}
+
+.shop_thing_font{
+	font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+.shop_thing .icon{
+	padding:13px;
+}
+.shop_thing .icon img{	
+   width:15px;
+   height: 15px;
+   border: none;
+}
+.shop_thing .icon img:hover{	
+   opacity: 0.5;
+   cursor: pointer;
+}
+
+
+.num{
+	float: left;
+	width:300px;
+	height:100px;
+    line-height: 100px;
+    text-align: center;
+
+}
+.num .miu{
+   padding:5px;
+   line-height: 14px;
+   font-size: 14px;
+   border:1px solid #ccc;
+   margin-right:1px;
+
+}
+.num .miu:hover{
+   border:1px solid #F00;
+   cursor: pointer;
+   color: #F00;
+}
+
+.num .add{
+   padding:5px;
+   line-height: 14px;
+   font-size: 14px;
+   border:1px solid #ccc;
+   margin-left:1px;
+}
+.num .add:hover{
+   border:1px solid #F00;
+   cursor: pointer;
+   color: #F00;
+}
+
+.num input{
+	width:50px;
+	height:23px;
+	text-align: center;
+}
+.price{
+	float: left;
+	width:300px;
+	height:100px;
+	line-height: 100px;
+    text-align: center;
+    color: #F00;
+
+}
+.deldiv{
+    float: left;
+    width:160px;
+	height:100px;
+	line-height: 100px;
+    text-align: center;
+}
+
+.deldiv button{
+	width:50px;
+}
+.deldiv button:hover{
+	color:#F00;
+	cursor: pointer;
+}
+
+.allmoney{
+	float: right;
+	padding: 10px;
+	color: #F00;
+	padding-right: 40px;
+	font-size: 40px;
+}
+</style>
+</head>
+<body>
+
+<div id='box'>
+   
+
+   <div class="container">
+	  <div class="store"><input type='checkbox'>能量数码店</div>
+	  <div class="content">
+	  	 <div class="choice"><input type="checkbox"></div>
+	  	 <div class="shop_thing"> 	    
+	  	 	<a href="" class="shopimg"><img src="img/1_1.jpg" alt="8_2.jpg"></a>
+	  	 	<span class="shop_thing_font"><a href="" class="shopfont">TCL XQB60-21CSP 6公斤全自动波轮洗衣机家用小型特价学生宿舍用</a></span>
+	  	 	<div class='icon'><img src="img/1_1.jpg"><img src="img/1_1.jpg"><img src="img/1_1.jpg"></div>
+	  	 </div>
+	  	 <div class="num"><a href="" class='miu'>-</a><input type="text" value="1" class="number"><a href="" class='add'>+
+	  	 </a></div>
+	  	 <div class="price">￥2100元</div>
+	  	 <div class="deldiv"><button type="button">删除</button></div>
+	  </div>
+  </div>
+ 
+   <div class="container">
+	  <div class="store"><input type='checkbox'>能量数码店</div>
+	  <div class="content">
+	  	 <div class="choice"><input type="checkbox"></div>
+	  	 <div class="shop_thing"> 	    
+	  	 	<a href="" class="shopimg"><img src="img/1_1.jpg" alt="8_2.jpg"></a>
+	  	 	<span class="shop_thing_font"><a href="" class="shopfont">TCL XQB60-21CSP 6公斤全自动波轮洗衣机家用小型特价学生宿舍用</a></span>
+	  	 	<div class='icon'><img src="img/1_1.jpg"><img src="img/1_1.jpg"><img src="img/1_1.jpg"></div>
+	  	 </div>
+	  	 <div class="num"><a href="" class='miu'>-</a><input type="text" value="1" class="number"><a href="" class='add'>+
+	  	 </a></div>
+	  	 <div class="price">￥2200元</div>
+	  	 <div class="deldiv"><button type="button">删除</button></div>
+	  </div>
+  </div>
+
+  
+   <div class="container">
+	  <div class="store"><input type='checkbox'>能量数码店</div>
+	  <div class="content">
+	  	 <div class="choice"><input type="checkbox"></div>
+	  	 <div class="shop_thing"> 	    
+	  	 	<a href="" class="shopimg"><img src="img/1_1.jpg" alt="8_2.jpg"></a>
+	  	 	<span class="shop_thing_font"><a href="" class="shopfont">TCL XQB60-21CSP 6公斤全自动波轮洗衣机家用小型特价学生宿舍用</a></span>
+	  	 	<div class='icon'><img src="img/1_1.jpg"><img src="img/1_1.jpg"><img src="img/1_1.jpg"></div>
+	  	 </div>
+	  	 <div class="num"><a href="" class='miu'>-</a><input type="text" value="1" class="number"><a href="" class='add'>+
+	  	 </a></div>
+	  	 <div class="price">￥2300.50元</div>
+	  	 <div class="deldiv"><button type="button">删除</button></div>
+	  </div>
+  </div>
+
+	<!-- <div style="clear:both;width:1px;height:1px"></div> -->
+	
+	    <div id="checkall" style="position: absolute;left:70px;bottom:90px;"><input type="checkbox" id="t1"><label for='t1'>全选</label></div>
+	    <div id="checkrev" style="position: absolute;left:150px;bottom:90px;"><input type="checkbox" id="t2"><label for='t2'>反选</label></div>
+	    <div class="allmoney" style="position: absolute;bottom:0;right:50px">￥0.00元</div>
+   
+    <!-- <div style="clear:both;width:1px;height:70px"></div> -->
+
+
+</div>
+
+
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+
+	
+$(function(){
+
+   var  allmoney =0;  
+
+   function shoppingCart(){
+   	 for(var i=0;i<$(".add").length;i++){
+   	 	    (function(i){
+  	   
+   	 	   	    $(".add").eq(i).click(function(e){
+   	 	   	    	var i = $(".add").index(e.target);
+   	 	   	    	e.preventDefault();
+			       	var val = $(".number").eq(i).val();
+			       	val = parseInt(val,10)+1;
+		       	    $(".number").eq(i).val(val.toString());
+	     		});
+
+     		     
+     		    $(".miu").eq(i).click(function(e){
+     		    	var i = $(".miu").index(e.target);
+     		     	e.preventDefault();
+			       	var val = $(".number").eq(i).val();
+			       	val = parseInt(val,10)-1;
+			       	if(val>0)
+		       	    $(".number").eq(i).val(val.toString());
+     		    });
+
+     		    $(".number").eq(i).change(function(e){
+     		    	var i = $(".mumber").index(e.target);
+                      var value = $(this).val();
+                      if(!/\d/.test(value)){
+                      	 alert("数量必须为正整数");
+                      	 $(this).val("1");
+                      }else if(parseInt(value, 10)<1){
+                          alert("数量必须大于等于1");
+                          $(this).val("1");
+                      }
+     		    });
+
+
+     		    $(".container").eq(i).mouseover(function(e){
+     		    	var i = $(".container").index(e.target);
+                       $(this).css("background-color","#ffd");
+     		    }).mouseout(function(){
+     		    	   $(this).css("background-color","#fff");
+     		    })
+
+
+     		    $(".store input[type='checkbox']").eq(i).change(function(e){
+     		    	var i = $(".store input[type='checkbox']").index(e.target);
+     		    	var ss = $(".choice input[type='checkbox']").eq(i)[0];
+     		    	if(!ss.checked)
+     		    	   ss.checked = true;
+     		        else 
+     		        	ss.checked = false;
+     		    })
+
+     		    $(".choice input[type='checkbox']").eq(i).change(function(e){
+     		    	var i =  $(".choice input[type='checkbox']").index(e.target);
+     		    	var ss = $(".store input[type='checkbox']").eq(i)[0];
+     		    	if(!ss.checked)
+     		    	   ss.checked = true;
+     		        else 
+     		        	ss.checked = false;
+     		     })
+
+
+     		    $("#t1").change(function(){
+     		    	for(var i=0;i<$(".store").length;i++){
+ 		    			$(".store input[type='checkbox']")[i].checked = true;
+ 		    	        $(".choice input[type='checkbox']")[i].checked = true;	
+
+ 		    	        if(!$('#t1')[0].checked){
+	     		    		$(".store input[type='checkbox']")[i].checked = false;
+	 		    	        $(".choice input[type='checkbox']")[i].checked = false;
+     		         	}	
+     		    	}	    
+
+     		    	
+     		    })
+
+
+     		    $("#t2").change(function(){
+
+     		    	for(var i=0;i<$(".store").length;i++){
+     		    		if(!$(".store input[type='checkbox']")[i].checked){
+     		    			$(".store input[type='checkbox']")[i].checked = true;
+     		    	        $(".choice input[type='checkbox']")[i].checked = true;
+     		    		}else{
+     		    			$(".store input[type='checkbox']")[i].checked = false;
+     		    	        $(".choice input[type='checkbox']")[i].checked = false;
+     		    		}
+     		    		
+     		    	}
+
+     		    	
+     		    })
+
+
+                $(".deldiv button").eq(i).click(function(){
+                 	   var index = $(".deldiv button").index($(this));
+                 	   if(confirm("确认删除吗?"))
+                 	   $("#box").children().eq(index).remove();
+                 })
+
+                
+                setInterval(function(){
+                	var allmoney =0;
+                	$(".allmoney").html("￥0.00元");
+                	for(var i=0;i<$(".container").length;i++){
+                		if($(".choice input[type='checkbox']")[i].checked){
+                			var num = parseFloat($(".number").eq(i).val());
+			    			var cont = $.trim($(".price").eq(i).text());
+			    			var begin = cont.indexOf("元",0);
+                            var per_pri = cont.substr(1,begin-1);
+                            per_pri = parseFloat(per_pri);
+
+                            if(isNaN(per_pri)){
+                            	per_pri = 0;
+                            }
+
+                            allmoney = num*per_pri + allmoney;
+
+                            $(".allmoney").html("");
+                            allmoney = allmoney.toString();
+                            if(/\./.test(allmoney)){
+                            	if(/\.\d{2}/.test(allmoney)){
+                            		allmoney = parseFloat(allmoney);
+                            		$(".allmoney").html("￥"+allmoney+"元");
+                            	}else if(/\.\d{1}/.test(allmoney)){
+                            		allmoney = parseFloat(allmoney);
+                            		$(".allmoney").html("￥"+allmoney+"0元");
+                            	}
+                         	   
+                            }else{
+                            	allmoney = parseFloat(allmoney);
+                            	$(".allmoney").html("￥"+allmoney+".00元");
+                            }
+                            
+                		}
+                		if(!$(".choice input[type='checkbox']")[i].checked){
+                			$("#t1")[0].checked =false;
+                		}
+                	}
+
+
+
+                }, 300);
+
+
+   	 	   })(i);
+   	 }   
+   }
+   shoppingCart();
+})
+
+
+</script>
+</body>
+</html>

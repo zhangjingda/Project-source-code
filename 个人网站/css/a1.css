@@ -1,0 +1,131 @@
+@charset "UTF-8";
+html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img {
+    margin: 0;
+    padding: 0;
+}
+body{
+	font-size: 14px;
+	font-family: Arial,"宋体";
+	color: #000;
+}
+.font-red{
+	color:#F00;
+}
+.font-green{
+	color:#0F0;
+}
+.floatl{
+	float: left;
+}
+.floatr{
+	float: right;
+}
+.clearall{
+	clear: both;
+}
+.margin-right5{
+	margin-right: 5px;
+}
+fieldset,img {
+    border: 0;
+}
+img {
+    display: block;
+
+}
+a{
+	text-decoration: none;
+	color:#000;
+}
+a:hover{
+	color:#F00;
+}
+ul{
+	padding-left: 18px;
+}
+ul li{
+	padding:2px 0 4px 0;
+}
+.menu{
+	margin-top:10px;
+}
+
+.nav li a{
+	margin-top:24px;
+	padding:3px 10px 3px 10px;
+}
+.jumbotron {
+	margin-top:20px;
+}
+.bk{
+	background: #F00 url("img/bk.jpg") no-repeat ;
+}
+.jumbotron .container{
+	margin-top:-30px;
+}
+.mask{
+	background-color: rgba(156,76,123,0.8);
+	opacity:0;
+	position: absolute;
+	margin-top:-150px;
+	width:150px;
+	height:150px;
+	padding-top:30px;
+	padding-left: 40px;
+	font-size: 70px;
+	color:#FFF;
+	font-weight: bolder;
+	border-radius: 50%;
+}
+.tip{
+	margin-top:-20px;
+	margin-bottom: 20px;
+}
+
+
+#showpic .picbox{
+	border:3px solid #FFF;
+	float: left;
+	height:150px;
+	
+}
+#showpic .picbox:hover{
+	border:3px solid #a291b0;
+	float: left;
+
+}
+#showpic .picbox .textcont{
+	text-align: center;
+	line-height: 14px;
+	vertical-align: middle;
+	background: #ccc;
+	opacity: 0.8;
+	display: none;
+	padding:5px 0;
+	
+}
+#showpic .picbox .textcont a{
+	color:#F00;
+}
+
+.head-title{
+	margin-top:30px;
+	font-size:20px;
+}
+.mainlef{
+	margin-top:30px;
+	
+}
+.rig1-mar{
+	margin-top:-12px;
+	margin-left:20px;
+}
+.rig2-ul{
+	list-style-type:none;
+	padding-left:0;
+}
+.rig2-ul li{
+	padding:6px 0;
+}
+
+

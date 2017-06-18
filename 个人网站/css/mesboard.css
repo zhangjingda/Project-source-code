@@ -1,0 +1,40 @@
+.mes-title{
+	padding:5px;
+	font-size: 30px;
+	height: 50px;
+}
+.panel-body,.list-group-item{
+	font-size: 12px;
+	// min-height: 100px;
+	// height: 100px;
+}
+.userpic{
+	height:45px;
+	width:40px;
+	overflow: hidden;
+	padding: 3px;
+	margin-right:10px;
+	// float:left;
+
+}
+.panel-body h4{
+	font-size: 14px;
+	color: #F00;
+}
+.list-group-item h4{
+	font-size: 14px;
+	color: #F00;
+}
+.panel-body .content{
+	margin-top:7px;
+	line-height: 1.7em;
+
+}
+.list-group-item .content{
+	margin-top:7px;
+	line-height: 1.7em;
+}
+.mestit{
+    padding:5px;
+    font-size: 20px;
+}

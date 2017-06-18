@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" Content="text/html; charset=utf-8" />
+
+     <title>无标题文档</title>
+<style type="text/css">
+	
+.canvas{
+	background-color: #ccc;
+}
+</style>
+</head>
+<body>
+
+<canvas width="500" height="500" id="canvas" class="canvas"></canvas>
+<!--<script type="text/javascript" src="jquery-2.1.1.min.js"></script>-->
+<script type="text/javascript">
+  
+var can = document.getElementById('canvas');
+var cxt = can.getContext("2d");
+var turn =0;
+
+var x=100,y=100,w=20,h=20;
+var tx =0,ty=0;
+getRect(cxt,x,y,w,h);
+setRoundRect(can,cxt,w,h);
+var arr = [];
+arr.unshift({left:100,top:100});
+document.onkeydown = function(e){
+	 e=window.event||e;
+	switch(e.keyCode){
+    case 37: //左键
+      turn=-1;
+      break;
+    case 38: //向上键
+       turn=2;
+      break;
+    case 39: //右键
+      turn = 0;
+      break;
+    case 40: //向下键
+       turn =1;
+      break;
+    default:
+      break;
+  }
+	
+}
+   var s = window.setInterval(function(){
+
+	if(arr[0].left<=0 || arr[0].left>=can.width-w || arr[0].top<=0 || arr[0].top>=can.height-h){
+
+		if(arr[0].left<0){
+			arr[0].left = arr[0].left +  2*w;
+			alert("游戏结束，即将刷新重新开始");
+			window.clearInterval(s);
+			window.location.href="";
+			
+		}
+		else if(arr[0].left>can.width-w){
+			arr[0].left = arr[0].left - 2*w;
+			alert("游戏结束，即将刷新重新开始");
+			window.clearInterval(s);
+			window.location.href="";
+			
+		}
+		else if(arr[0].top<0){
+			arr[0].top = arr[0].top + 2*h;
+			alert("游戏结束，即将刷新重新开始");
+			window.clearInterval(s);
+			window.location.href="";
+			
+		}
+		else if(arr[0].top>can.height-h){
+			arr[0].top = arr[0].top - 2*h;
+			alert("游戏结束，即将刷新重新开始");
+			window.clearInterval(s);
+			window.location.href="";
+			
+		}
+
+	}
+
+
+	
+	if(turn==-1){
+        if(arr[0].left - w == tx && arr[0].top == ty){
+			arr.unshift({left:tx , top: ty}); 
+			setRoundRect(can,cxt,w,h);
+		} else{
+			cxt.clearRect(0,0,can.width,can.height);
+			if(arr.length>=2)
+			for(var i=arr.length-2;i>=0;i--){
+				arr[i+1].top = arr[i].top;
+				arr[i+1].left = arr[i].left;
+			}	
+		
+			cxt.fillRect(tx, ty, w, h);
+			arr[0].left = arr[0].left -  w ;	
+			for(var i=0;i<arr.length;i++){
+				cxt.fillRect(arr[i].left, arr[i].top, w, h);
+			}	
+		}
+			
+
+	}else if(turn==0){
+
+		if(arr[0].left+w==tx && arr[0].top == ty){
+			arr.unshift({left:tx , top: ty}); 
+			setRoundRect(can,cxt,w,h);
+		} else{
+			cxt.clearRect(0,0,can.width,can.height);
+			if(arr.length>=2)
+			for(var i=arr.length-2;i>=0;i--){
+				arr[i+1].top = arr[i].top;
+				arr[i+1].left = arr[i].left;
+			}	
+			cxt.fillRect(tx, ty, w, h);
+			arr[0].left = arr[0].left + w;
+			for(var i=0;i<arr.length;i++){
+				cxt.fillRect(arr[i].left, arr[i].top, w, h);
+			}
+
+		}
+			
+		
+		
+
+			
+
+	}else if(turn==1){
+
+		if(arr[0].top+h==ty && arr[0].left == tx){
+			arr.unshift({left:tx , top: ty}); 
+			setRoundRect(can,cxt,w,h);
+		} else{
+
+			cxt.clearRect(0,0,can.width,can.height);
+			if(arr.length>=2)
+			for(var i=arr.length-2;i>=0;i--){
+				arr[i+1].top = arr[i].top;
+				arr[i+1].left = arr[i].left;
+			}	
+			cxt.fillRect(tx, ty, w, h);
+			arr[0].top = arr[0].top + h;
+			for(var i=0;i<arr.length;i++){
+				cxt.fillRect(arr[i].left, arr[i].top, w, h);
+			}
+
+		}
+			
+
+	}else if(turn==2){
+		if(arr[0].top-h==ty && arr[0].left == tx){
+			arr.unshift({left:tx , top: ty}); 
+			setRoundRect(can,cxt,w,h);
+		} else{
+			cxt.clearRect(0,0,can.width,can.height);
+			if(arr.length>=2)
+			for(var i=arr.length-2;i>=0;i--){
+				arr[i+1].top = arr[i].top;
+				arr[i+1].left = arr[i].left;
+			}	
+			cxt.fillRect(tx, ty, w, h);
+			arr[0].top = arr[0].top - h;
+			for(var i=0;i<arr.length;i++){
+				cxt.fillRect(arr[i].left, arr[i].top, w, h);
+			}
+
+		}
+			
+		
+		
+	}
+
+  if(hasTwoSame(arr)){
+        	alert("游戏结束，即将刷新重新开始");
+			window.clearInterval(s);
+			window.location.href="";
+  }
+	
+}, 200);
+
+function getRect(cxt,x,y,w,h){
+    cxt.fillStyle = "#000";
+    cxt.fillRect(x, y, w, h);
+}
+function setRoundRect(can,cxt,w,h){
+   var vx = Math.floor(can.width/w);
+   var vy = Math.floor(can.height/h);
+   var rx = Math.floor(Math.random()*vx);
+   var ry = Math.floor(Math.random()*vy);
+   tx = w*rx;
+   ty = h*ry;
+   getRect(cxt,w*rx,h*ry,w,h);
+}
+
+function hasTwoSame(arr){
+	var len = arr.length;
+	if(len>0){
+		for(var i=0;i<len;i++){
+			for(var j=i+1;j<len;j++){
+				if(arr[i].top == arr[j].top && arr[i].left == arr[j].left)return true;
+			}
+		}
+		return false;
+	}
+	return false;
+}
+
+</script>
+</body>
+
+
+</html>

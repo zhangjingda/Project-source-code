@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, maximum-scale=1.0, 
+ minimum-scale=1.0,user-scalable=no">
+ <link rel="stylesheet" href="./dist/css/bootstrap.min.css">
+<style> 
+
+</style>
+
+
+<script type="text/javascript">
+
+</script>
+<style type="text/css" rel="stylesheet">
+    body{
+        font-family: Arial "宋体";bottom: 
+        font-size: 12px;
+        font-weight: bold;
+        color:#888;
+        overflow-x: hidden;
+        width:100%;
+        margin:0;
+        padding:0;
+    }
+   #flexbox1{
+       display: flex;
+       flex-flow: row nowrap;
+
+   }
+    #flexbox1 .ret{
+        width:100%;
+        height:40px;
+        background: #00F;
+        opacity:0.6;
+        border-bottom: 1px solid #ccc;
+
+    }
+    #flexbox1 .ret .retarrow{
+        
+        line-height: 40px;
+        padding:10px;
+    }
+    
+
+   #flexbox2{
+       display: flex;
+       flex-flow: row nowrap;
+       justify-content: center;
+       text-align: center;
+   }
+    #flexbox2 .log{
+       width:50px;
+       border:1px solid #ccc;
+       border-radius: 10%;
+       -webkit-border-radius:5%;
+       box-shadow: 1px 1px 2px #000;
+       margin: 1rem 1rem;
+   }
+   #flexbox3{
+       display: flex;
+       flex-flow: row nowrap;
+       justify-content: center;
+       margin-top:10px;
+   }
+   #flexbox3 .lable{
+       margin-right:20px;
+        line-height:30px;
+   }
+   #flexbox4{
+       display: flex;
+       justify-content: center;
+       text-align: center;
+       margin-top:10px;
+   }
+   #flexbox4 .lable{
+        margin-right:38px;
+        text-align: center;
+        line-height:30px;
+   }
+   .containe input[type=text]{
+      height:20px;
+      padding:2px 5px;
+   }
+   .row{
+    margin: 15px auto;
+   }
+    .btn{
+        border:none;
+        outline: none;
+    }
+   .btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;          
+}
+
+</style>
+</head>
+<body>
+<div id="container">
+    <div id="flexbox1">
+       <div class="ret"><span class="retarrow"><button type="button" class="btn btn-primary"
+       style="background-color: #00F;opacity:0.6;font-size: 18px;">
+       <</button></span></div>
+    </div>
+  <!--   <div id="flexbox2">
+       <div class="log">注册</div>
+       <div class="log">登录</div>
+    </div>
+    <div id="flexbox3">
+       <div class="lable">用户名:</div>
+       <div class="name"><input type="text" id="name"></div>
+    </div>
+    <div id="flexbox4">
+       <div class="lable">密码:</div>
+       <div class="pwd"><input type="text" id="pwd"></div>
+    </div> -->
+
+</div>
+<!-- <div style="margin-top:40px"></div> -->
+<div class="container">
+   <div class="row">
+        <div class="col-xs-6">
+           <button type="button" class="btn btn-primary btn-block" id="login">登录</button></div>
+         <div class="col-xs-6">
+           <button type="button" class="btn btn-primary btn-block" id="enroll">注册</button>
+       </div>
+   </div>
+   <div class="row" id="for_enroll">
+
+     <div class="col-xs-12">
+
+
+     <form role="form">
+
+      <div class="form-group">
+        <label for="name">你的手机号码：</label>
+        <input type="text" class="form-control" id="pwd1" placeholder="请输入手机号码">
+      </div>
+     
+       <div class="form-group">
+       <label for="name">验证码：</label>
+          <div class="input-group">
+          <input type="text" class="form-control" placeholder="请输入验证码">
+              <span class="input-group-btn">
+                   <button class="btn btn-primary" type="button">获取验证码</button>
+              </span>
+              
+        </div>
+      </div>
+    
+
+
+      <div class="form-group">
+        <label for="name">用户名：</label>
+        <input type="text" class="form-control" id="pwd1" placeholder="请输入用户名">
+      </div>
+       <div class="form-group">
+        <label for="name">密码：</label>
+        <input type="text" class="form-control" id="pwd1" placeholder="请输入密码">
+      </div>
+       <div class="form-group">
+        <label for="name">确认密码：</label>
+        <input type="text" class="form-control" id="pwd1" placeholder="请确认密码">
+      </div>
+    
+      <div class="checkbox">
+        <label>
+          <input type="checkbox">我同意用户协议
+        </label>
+      </div>
+  
+      <button type="submit" class="btn btn-danger btn-block">注册</button>
+    </form>
+    
+    </div>
+   </div>
+
+
+ <div class="row" id="for_login">
+     <div class="col-xs-12">
+     <form role="form">
+      <div class="form-group">
+        <label for="name">用户名：</label>
+        <input type="text" class="form-control" id="pwd1" placeholder="请输入用户名">
+      </div>
+       <div class="form-group">
+        <label for="name">密码：</label>
+        <input type="text" class="form-control" id="pwd1" placeholder="请输入密码">
+      </div>
+      <button type="submit" class="btn btn-danger btn-block">登录</button>
+    </form>
+    
+    </div>
+   </div>
+
+
+
+</div>
+
+<script type="text/javascript">
+window.onload=function(){
+    var for_login =  document.getElementById('for_login');
+    var for_enroll =  document.getElementById('for_enroll');
+    for_enroll.style.display = "none"; 
+    var enroll = document.getElementById('enroll');
+    var login = document.getElementById('login');
+    enroll.onclick =function(){
+      for_enroll.style.display = "block";
+      for_login.style.display = "none";   
+      // for_login.style.display = "none"; 
+   }
+    login.onclick =function(){
+      for_enroll.style.display = "none"; 
+      for_login.style.display = "block";  
+   }
+  
+}
+  
+
+</script>
+</body>
+</html>

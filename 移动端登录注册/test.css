@@ -1,0 +1,72 @@
+@media screen and (min-width: 750px) and (max-width: 1350px) and (-webkit-device-pixel-ratio: 2) {
+  div {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1536px) and (-webkit-device-pixel-ratio: 2) {
+  div {
+    font-size: 50px;
+  }
+}
+@media screen and (min-width: 1242px) and (-webkit-device-pixel-ratio: 3) {
+  div {
+    font-size: 40px;
+  }
+}
+@media screen and (min-width: 1242px) and (-webkit-device-pixel-ratio: 1) {
+  div {
+    font-size: 14px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Microsoft YaHei";
+}
+.box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding-top: 0.3rem;
+}
+.test {
+  width: 2rem;
+  height: 1.35rem;
+  border: 1px solid #f00;
+  float: left;
+  overflow: hidden;
+}
+.test img {
+  width: 100%;
+}
+.setimg {
+  margin-left: 0.44rem;
+  float: left;
+  padding-top: 1.33333333rem;
+}
+.setimg img {
+  width: 2.66666667rem;
+  height: 0.76rem;
+}
+.p2 {
+  margin-left: 0.38666667rem;
+  float: left;
+  padding-top: 1.33333333rem;
+}
+.p2 img {
+  width: 2.82666667rem;
+  height: 2.09333333rem;
+}
+.sd {
+  clear: left;
+  width: 5.33333333rem;
+  height: 4rem;
+  border: solid #f00;
+  border-width: 0.01333333rem;
+}
+.sd:before {
+  content: "hello";
+  display: table-cell;
+}
