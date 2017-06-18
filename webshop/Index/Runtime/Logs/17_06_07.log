@@ -1,0 +1,21 @@
+[ 2017-06-07T22:30:06+08:00 ] 0.0.0.0 /webshop/index.php
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016001s ]
+NOTIC: [8] Undefined index: username E:\www\webshop\Index\Lib\Action\IndexAction.class.php 第 104 行.
+ERR: 系统不支持:mysql
+
+[ 2017-06-07T22:47:57+08:00 ] 0.0.0.0 /webshop/index.php
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.043002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.139008s ]
+NOTIC: [8] Undefined index: username E:\www\webshop\Index\Lib\Action\IndexAction.class.php 第 104 行.
+ERR: 系统不支持:mysql
+
+[ 2017-06-07T22:52:24+08:00 ] 0.0.0.0 /webshop/index.php
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: username E:\www\webshop\Index\Lib\Action\IndexAction.class.php 第 104 行.
+ERR: 系统不支持:mysql
+
